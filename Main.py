@@ -32,40 +32,7 @@ client = Client(command_prefix="!", intents=intents)
 
 GUILD_ID = discord.Object(id=895840135013343344)
 
-@client.tree.command(name="hello", description="say hello!", guild=GUILD_ID)
-async def sayHello(interaction: discord.Interaction):
-    await interaction.response.send_message("Hello there")
 
-@client.tree.command(name="bye", description="say bye!", guild=GUILD_ID)
-async def sayBye(interaction: discord.Interaction, print_name: str):
-    await interaction.response.send_message(f"bye bye {print_name}")
-
-@client.tree.command(name="embed", description="makes an embed!", guild=GUILD_ID)
-async def makeemb(interaction: discord.Interaction):
-    embed = discord.Embed(title="this is the title", description="this is the description", url="https://www.google.com/", color=discord.Color.blue())
-    embed.set_thumbnail(url="https://i.pinimg.com/736x/b7/ea/e2/b7eae22df79bf7243e3801ff07843f6e.jpg")
-    embed.add_field(name="field 1 title", value="this is the value of the first field", inline=False)
-    embed.add_field(name="field 2 title", value="this is the value of the second field")
-    embed.set_footer(text="this is the footer text", icon_url="https://i.pinimg.com/736x/b7/ea/e2/b7eae22df79bf7243e3801ff07843f6e.jpg")
-    embed.set_author(name=interaction.user.name)
-    await interaction.response.send_message(embed=embed)
-
-class View2(discord.ui.View):
-    @discord.ui.button(label="Click me", style=discord.ButtonStyle.blurple, emoji="🔥")
-    async def button_callback(self, button, interaction):
-        await interaction.response.send_message("you clicked the blurple button")
-
-    @discord.ui.button(label="Don't click me", style=discord.ButtonStyle.danger, emoji="🥵")
-    async def button_callback2(self, button, interaction):
-        await interaction.response.send_message("you clicked the red button")
-
-    @discord.ui.button(label="im the best button!", style=discord.ButtonStyle.success, emoji="😀")
-    async def button_callback3(self, button, interaction):
-        await interaction.response.send_message("you clicked the green button")
-
-@client.tree.command(name="button", description="say button!", guild=GUILD_ID)
-async def saybutton(interaction: discord.Interaction):
-    await interaction.response.send_message(view=View2())
 
 
 @client.tree.command(name="strike", description="Adds a strike to a server member", guild=GUILD_ID)
