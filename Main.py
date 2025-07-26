@@ -169,9 +169,3 @@ client.run('MTM1NDUzMzU4NDQwODQxNjM5OA.GFqHWR.m90c9E_4kvE_Hjco10eCmXU1SohXVcrAVg
 
 
 
-
-
-
-            
-
-client.run('MTM1NDUzMzU4NDQwODQxNjM5OA.GFqHWR.m90c9E_4kvE_Hjco10eCmXU1SohXVcrAVg8G_Q')
